@@ -1,6 +1,4 @@
-﻿using SampleApp.Application.Commands;
-
-namespace SampleApp.Application.Contact.AddContact
+﻿namespace SampleApp.Application.Commands.Contact
 {
     public class AddContactCommand : ICommand<int>
     {

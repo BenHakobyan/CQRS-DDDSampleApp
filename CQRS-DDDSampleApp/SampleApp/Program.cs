@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore;
@@ -18,6 +19,13 @@ namespace SampleApp
 
         public static IWebHostBuilder CreateWebHostBuilder(string[] args) =>
             WebHost.CreateDefaultBuilder(args)
+            .ConfigureAppConfiguration((hostContext, config) =>
+            {
+                config.SetBasePath(Directory.GetCurrentDirectory());
+                config.AddJsonFile("appsettings.json");
+                config.AddJsonFile($"appsettings.{hostContext.HostingEnvironment.EnvironmentName}.json");
+
+            })
                 .UseStartup<Startup>();
     }
 }

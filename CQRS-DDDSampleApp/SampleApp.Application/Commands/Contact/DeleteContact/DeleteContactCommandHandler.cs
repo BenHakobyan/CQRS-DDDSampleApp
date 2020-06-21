@@ -1,14 +1,10 @@
 ﻿using MediatR;
-using SampleApp.Application.Commands;
 using SampleApp.Application.Exceptions;
 using SampleApp.Domain.Repositories;
-using System;
-using System.Collections.Generic;
-using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
 
-namespace SampleApp.Application.Contact.DeleteContact
+namespace SampleApp.Application.Commands.Contact
 {
     public class DeleteContactCommandHandler : ICommandHandler<DeleteContactCommand>
     {
@@ -35,7 +31,7 @@ namespace SampleApp.Application.Contact.DeleteContact
 
             _contactRepository.Remove(contact);
 
-            await _unitOfWork.CommitAsync();
+            await _unitOfWork.CommitAsync(cancellationToken);
 
             return default;
         }

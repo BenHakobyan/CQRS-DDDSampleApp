@@ -1,4 +1,4 @@
-﻿namespace SampleApp.Application.Contact
+﻿namespace SampleApp.Application.DTO
 {
     public class ContactDTO
     {

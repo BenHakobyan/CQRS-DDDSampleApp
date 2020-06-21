@@ -1,6 +1,7 @@
-﻿using System;
+﻿using SampleApp.Domain.Rules;
+using System;
 
-namespace SampleApp.Domain
+namespace SampleApp.Domain.Exceptions
 {
     public class BusinessRuleValidationException : Exception
     {

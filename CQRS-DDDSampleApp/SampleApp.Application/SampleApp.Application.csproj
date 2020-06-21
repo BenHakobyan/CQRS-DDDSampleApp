@@ -13,9 +13,4 @@
     <ProjectReference Include="..\SampleApp.Infrastucture\SampleApp.Infrastucture.csproj" />
   </ItemGroup>
 
-  <ItemGroup>
-    <Folder Include="Queries\Contact\GetContactById\" />
-    <Folder Include="Queries\Contact\GetContactList\" />
-  </ItemGroup>
-
 </Project>

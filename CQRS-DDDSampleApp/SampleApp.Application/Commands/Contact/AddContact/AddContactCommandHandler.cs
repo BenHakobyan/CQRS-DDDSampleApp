@@ -1,10 +1,9 @@
-﻿using SampleApp.Application.Commands;
-using SampleApp.Domain;
+﻿using SampleApp.Domain;
 using SampleApp.Domain.Repositories;
 using System.Threading;
 using System.Threading.Tasks;
 
-namespace SampleApp.Application.Contact.AddContact
+namespace SampleApp.Application.Commands.Contact
 {
     public class AddContactCommandHandler : ICommandHandler<AddContactCommand, int>
     {
@@ -25,7 +24,7 @@ namespace SampleApp.Application.Contact.AddContact
 
         public async Task<int> Handle(AddContactCommand request, CancellationToken cancellationToken)
         {
-            var contact = Domain.Entities.Contact.Create(request.FullName, request.Email, request.Address, request.PhoneNumber, _contactsContext);
+            var contact = Domain.Entities.Contact.Create(request.FullName, request.Email, request.PhoneNumber, request.Address, _contactsContext);
 
             await _contactRepository.AddAsync(contact);
 

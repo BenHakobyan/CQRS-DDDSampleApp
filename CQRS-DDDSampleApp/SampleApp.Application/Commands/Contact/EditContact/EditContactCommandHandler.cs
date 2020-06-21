@@ -1,15 +1,11 @@
 ﻿using MediatR;
-using SampleApp.Application.Commands;
 using SampleApp.Application.Exceptions;
 using SampleApp.Domain;
 using SampleApp.Domain.Repositories;
-using System;
-using System.Collections.Generic;
-using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
 
-namespace SampleApp.Application.Contact.EditContact
+namespace SampleApp.Application.Commands.Contact
 {
     public class EditContactCommandHandler : ICommandHandler<EditContactCommand>
     {
@@ -40,7 +36,7 @@ namespace SampleApp.Application.Contact.EditContact
 
             contact.Edit(request.Contact.FullName, request.Contact.Email, request.Contact.PhoneNumber, request.Contact.Address, _contactsContext);
 
-            await _unitOfWork.CommitAsync();
+            await _unitOfWork.CommitAsync(cancellationToken);
 
             return default;
         }

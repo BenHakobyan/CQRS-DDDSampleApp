@@ -1,9 +1,11 @@
 ﻿using SampleApp.Domain.Rules.Contact;
+using System.ComponentModel.DataAnnotations;
 
 namespace SampleApp.Domain.Entities
 {
     public class Contact : BaseEntity
     {
+        [Key]
         public int Id { get; private set; }
         public string FullName { get; private set; }
         public string Email { get; private set; }
@@ -25,6 +27,7 @@ namespace SampleApp.Domain.Entities
                 Address = address
             };
 
+            CheckRule(new ContactModelValidationRule(contact));
             CheckRule(new ContactMustBeUniqueRule(contactsContext, contact));
 
             return contact;
@@ -37,6 +40,7 @@ namespace SampleApp.Domain.Entities
             this.PhoneNumber = phoneNumber;
             this.Address = address;
 
+            CheckRule(new ContactModelValidationRule(this));
             CheckRule(new ContactMustBeUniqueRule(contactsContext, this));
         }
     }

@@ -1,5 +1,4 @@
-﻿using SampleApp.Domain.Contact.Checkers;
-using System.Linq;
+﻿using System.Linq;
 
 namespace SampleApp.Domain.Rules.Contact
 {
