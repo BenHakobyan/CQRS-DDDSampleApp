@@ -5,17 +5,12 @@ namespace SampleApp.Domain.Entities
 {
     public class Contact : BaseEntity
     {
-        [Key]
         public int Id { get; private set; }
         public string FullName { get; private set; }
         public string Email { get; private set; }
         public string PhoneNumber { get; private set; }
         public string Address { get; private set; }
 
-        private Contact()
-        {
-
-        }
 
         public static Contact Create(string fullName, string email, string phoneNumber, string address, IContactsContext contactsContext)
         {

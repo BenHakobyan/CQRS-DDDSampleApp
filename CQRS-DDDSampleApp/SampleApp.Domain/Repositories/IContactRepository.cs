@@ -6,7 +6,7 @@ namespace SampleApp.Domain.Repositories
     {
         Task<Entities.Contact> GetByIdAsync(int id);
 
-        Task AddAsync(Entities.Contact customer);
+        void Add(Entities.Contact customer);
 
         void Remove(Entities.Contact customer);
     }

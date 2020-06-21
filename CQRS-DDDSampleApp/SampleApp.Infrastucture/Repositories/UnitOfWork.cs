@@ -7,8 +7,8 @@ namespace SampleApp.Infrastucture.Repositories
 {
     public class UnitOfWork : IUnitOfWork
     {
-        private readonly IContactsContext _context;
-        public UnitOfWork(IContactsContext context)
+        private readonly ContactsContext _context;
+        public UnitOfWork(ContactsContext context)
         {
             this._context = context;
         }

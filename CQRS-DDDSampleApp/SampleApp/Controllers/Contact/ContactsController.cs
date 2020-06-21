@@ -84,7 +84,7 @@ namespace SampleApp.Controllers.Contact
         /// Remove contact by ID.
         /// </summary>
         /// <param name="contactId">Contact ID.</param>
-        [Route("{contactId}/orders/{orderId}")]
+        [Route("{contactId}")]
         [HttpDelete]
         [ProducesResponseType((int)HttpStatusCode.OK)]
         public async Task<IActionResult> RemoveCustomerOrder([FromRoute]int contactId)

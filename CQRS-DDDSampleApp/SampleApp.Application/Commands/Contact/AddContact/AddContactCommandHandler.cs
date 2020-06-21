@@ -26,7 +26,7 @@ namespace SampleApp.Application.Commands.Contact
         {
             var contact = Domain.Entities.Contact.Create(request.FullName, request.Email, request.PhoneNumber, request.Address, _contactsContext);
 
-            await _contactRepository.AddAsync(contact);
+            _contactRepository.Add(contact);
 
             await _unitOfWork.CommitAsync(cancellationToken);
 

@@ -8,15 +8,16 @@ namespace SampleApp.Infrastucture.Repositories
 {
     public class ContactRepository : IContactRepository
     {
-        private readonly IContactsContext _context;
+        private readonly ContactsContext _context;
         public ContactRepository(ContactsContext context)
         {
             this._context = context;
         }
 
-        public async Task AddAsync(Contact customer)
+        public void Add(Contact contact)
         {
-            await _context.Contacts.AddAsync(customer);
+           var entry = _context.Attach(contact);
+           entry.State = EntityState.Added;
         }
 
         public async Task<Contact> GetByIdAsync(int id)
