@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace SampleApp.Application.Queries.Contact
 {
-    class GetContactListQueryHandler : IQueryHandler<GetContactListQuery, List<ContactDTO>>
+    public class GetContactListQueryHandler : IQueryHandler<GetContactListQuery, List<ContactDTO>>
     {
         private readonly IContactsContext _contactsContext;
         public GetContactListQueryHandler(IContactsContext contactsContext)
