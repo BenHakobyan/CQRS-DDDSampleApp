@@ -39,7 +39,7 @@ namespace SampleApp.UnitTest
             await testHelper.contactsContext.AddAsync(contact);
             await testHelper.contactsContext.SaveChangesAsync();
 
-            EditContactCommand editCommand = new EditContactCommand(new Application.DTO.ContactDTO() { Id = contact.Id, FullName = "another", Email = "another@test.com", PhoneNumber = "123456", Address = "herguhrgrhg" });
+            EditContactCommand editCommand = new EditContactCommand(new Application.DTO.ContactDTO() { Id = contact.Id, FullName = "another", Email = "another@test.com", PhoneNumber = "55555555555", Address = "herguhrgrhg" });
             EditContactCommandHandler editContactCommandHandler = new EditContactCommandHandler(testHelper.contactsContext, testHelper.GetInMemoryContactRepository(), testHelper.GetInMemoryUnitOfWork());
 
             //Act

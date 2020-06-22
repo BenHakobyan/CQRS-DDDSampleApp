@@ -17,6 +17,8 @@ namespace SampleApp.Infrastucture.Configuration
             builder.Property(c => c.Email).HasMaxLength(255);
             builder.Property(c => c.PhoneNumber).HasMaxLength(255);
             builder.Property(c => c.Address).HasMaxLength(255);
+
+            builder.HasData(Contact.SeedContacts());
         }
     }
 }

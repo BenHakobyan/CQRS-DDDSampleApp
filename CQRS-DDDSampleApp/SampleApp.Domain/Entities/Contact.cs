@@ -38,5 +38,16 @@ namespace SampleApp.Domain.Entities
             CheckRule(new ContactModelValidationRule(this));
             CheckRule(new ContactMustBeUniqueRule(contactsContext, this));
         }
+
+
+        //method for seed Contacts
+        public static Contact[] SeedContacts()
+        {
+            return new Contact[]
+            {
+                new Contact(){Id = 1, FullName = "John Smith", Email = "jsmith@mail.com", PhoneNumber= "123456", Address = "London, UK" },
+                new Contact(){Id = 2, FullName = "Walter White", Email =  "wwhite@gmail.com", PhoneNumber = "654321", Address = "Albuquerque, New Mexico, USA" }
+            };
+        }
     }
 }
